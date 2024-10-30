@@ -229,7 +229,6 @@ h4{
     text-align: center;
 }
 
-/* media query added */
 @media screen and (max-width:550px) {
     .top{
         flex: 0 0 25%;
