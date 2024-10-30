@@ -23,16 +23,26 @@ calculateBtn.addEventListener('click',()=>{
     let currentDate = new Date();
 
     if(!dateVal.value){
-        errorBox.textContent="Please Select the valid Date !!"
+        errorBox.textContent="Please Select the valid Date !!";
     }else{
     //calculate age
+    
     let age = currentDate.getFullYear()- dob.getFullYear();
     let month = currentDate.getMonth()-dob.getMonth();
     let day = currentDate.getDate()-dob.getDate();
 
+
+
     if(month<0 || (month===0 && day<0)){
         age--;
     } 
+
+    if(age<0){
+        errorBox.textContent="Please Select the valid Date !!";
+        return ;
+    }
+
+    errorBox.style.display="none";
     
     // display real values
     let resultBox = document.querySelector('.bottom');
